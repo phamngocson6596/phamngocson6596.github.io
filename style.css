@@ -24,7 +24,7 @@ body {
     border-collapse: collapse;
     width: 50%;
     border-radius: 10px;
-    border-style: dashed;
+    border-style: none;
   }
   
   td, th {
