@@ -22,10 +22,14 @@ body {
     font-family: arial, sans-serif;
     border: 2px solid black;
     border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
+    width: 50%;
+    max-width: 50%;
     border-radius: 10px;
     border-style: none;
+  }
+  tr {
+    width: 50%;
+    max-width: 50%;
   }
   img {
     max-width: 100%;
