@@ -305,5 +305,5 @@ const tablehtml = document.querySelector("#frameTable")
 listImage.sort(() => Math.random() - 0.5);
 
 listImage.forEach(img=>{
-    tablehtml.insertAdjacentHTML("beforeend", `<tr><td><img src="${img}" alt="qnhu"></td></tr>`)
+    tablehtml.insertAdjacentHTML("beforeend", `<tr><td><img src="${img}" alt="qnhu" class="w3-border w3-padding"></td></tr>`)
 })
