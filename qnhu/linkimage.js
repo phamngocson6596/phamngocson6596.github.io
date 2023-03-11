@@ -20,8 +20,6 @@ const listImage = [
       "https://lh3.googleusercontent.com/lJDW33uMJ6T_Xju9V--7YMKR8PVCQRdl2dTTV481S6giaqqnE-t22pTXwDuoYacmNAYpTXaN36pn9w4sXDYwzCVAZgbf7LeoVTBIMgH8qox_hNdiOxQWLNjqbt7u-REziPMC9utDGbs=w1920-h1080",
       "https://lh3.googleusercontent.com/1dB4Wnd7MVswIaJpbuHNDlFuJwO8maF5S31LnC_qoM8kFYot4sjB0CpPEmgvQ5KqXfRK5MgwZB9f_yHHmcY6bRH7HHjVKwQZkm78ptaISzvWrgAj06enXzSlDMBPmur1L5v9x2qYD-o=w1920-h1080",
       "https://lh3.googleusercontent.com/_KvYYNmzeug3D938U6TUPGK0pVpdCDhmZVK_hO10cLirVi1cPIfq4D3FIVu1-f7GTgA2kG3F80Fpf4KUqQ-OjvKbeB7m4WJ_wff7PLL8-DpONXV8ApPPbIqUwzZ-SpfWJDh9yiXlmfw=w1920-h1080",
-      "https://lh3.googleusercontent.com/UXHt8ywqM5CG4sNhTg6ZbWxmoFuLcXGuNSGGfbBfnwXxip5k9sv1ojSXTbMymUApkvTw3XjVe2chNieMF6n5X5qyFg4UcquVfDVGiOOPhAT_FZhQ8GncZNlkJ8FWvZFFNZDVQpxKTzE=w1920-h1080",
-      "https://lh3.googleusercontent.com/-Xb0zX1o8n2CYIr_XTZMHctO9zcohhXOqUNTL02H5NephaCS9xaw_oIYNlym709KStXzhPWEtw44LL7cfhpdIc6Zj_8WPCxzetnNBMTDiEqkIwmLddF69duZxc-edCEH8pHjWBe49pc=w1920-h1080",
       "https://lh3.googleusercontent.com/St84udes1FtDlI5zK5ihnhpGNx_FoQpz2LBXTmDFhCy1MF5-k5K0x7ZqPlrb5NRTYM_WkM_8GRruj_shd7KvXFS266JU9hA57K7MFmGYa9U2H3y_R7DWKGOMuiWSDBVVX7Y0EXEDjAQ=w1920-h1080",
       "https://lh3.googleusercontent.com/GL6YpgODczXKcvFvCL5heVrlCq3tLCGjmjwH0RxOgV6jLA5L6oPeobo4jZItElkQwu2xlVSXyLG6IPSTDrsQolwCQEj4oc1oraWam14zAqTlXbFvWzxiKsBF_Azjkqz4zhOGoT-2NNM=w1920-h1080",
       "https://lh3.googleusercontent.com/vCcDQp61yYpYBB7Cr2B1vzFgBn80MQs2rGpKLuCyG6uwHqzDB-OHzjveX-mmcXT-0fbIuPVoXXpzb5EPOueESJ91bFD6tQhZsKDHz2gPGZVFVEvedg2C0pfLNkqAx87wKOYvTeVN1Wc=w1920-h1080",
@@ -302,8 +300,8 @@ const listImage = [
 ];
 
 const tablehtml = document.querySelector("#frameTable")
-
 listImage.sort(() => Math.random() - 0.5);
+
 listImage.forEach(img=>{
     tablehtml.insertAdjacentHTML("beforeend", `<tr><td><img src="${img}" alt="qnhu"></td></tr>`)
 })
