@@ -1,4 +1,4 @@
-const listImage = [
+export const listImage = [
   "https://lh3.googleusercontent.com/xJ8dwcat_eE0nktBzd7xAjv-44SVTavQ2NKf3B4QVciy9T4hr-V3CgzwnvkwQ8QsS8gOpo4J_L2sYgZ-hdpx3cNX3Hni_ITiV9j1835ed03U-PRJtA3ESCtJyzuCIi83EkbahhjIqBs=w1920-h1080",
   "https://lh3.googleusercontent.com/SkiM4-Wq0spoFkphvZ7KlY-hLqaq2p870OVSf0VJKstxr20doPGrAuOeVWeiflDD6_9dml6FfpsP8WhP_b1wRtfj1F2BjrFVMSb604S8HwvEegP59KLGJl4_tifoY2VtQUbOTzxMPls=w1920-h1080",
   "https://lh3.googleusercontent.com/ndqgyYBEluLTVhWJC0Zdp31TCJoBY6_EbRSd-n58YNcf6i3YrTq-Z_ndJmt48sqqGUHb9smvl0YN9UjUPCSjGKaNRKKMwr3oc7nQE4J0gpxgVVMdEHSSmcltDlnEfQWSOvVB5tIXW3s=w1920-h1080",
@@ -298,9 +298,3 @@ const listImage = [
   "https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.15752-9/333327982_3588886344730920_4107938885086257897_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=Rzk7apbvgPEAX-cKcoU&_nc_ht=scontent.fsgn5-11.fna&oh=03_AdQwARS3utrCxobMp7IRWZV023B2ibMVnXcOdmk5xBdQkg&oe=6434D2D1"
 ];
 
-const tablehtml = document.querySelector("#frameTable")
-listImage.sort(() => Math.random() - 0.5);
-
-listImage.forEach(img=>{
-    tablehtml.insertAdjacentHTML("beforeend", `<tr><td><img src="${img}" alt="qnhu" class="w3-border w3-padding"></td></tr>`)
-})

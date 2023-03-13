@@ -3,24 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>Web Tama</title>
-    <style>
-      
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="adjust.css">
   </head>
-  <body>
-    <h1>Tamayama</h1>
-    
-    <h1>Text to Number</h1>
-    
-    <p>Enter a number:</p>
-    <input type="text" id="numberInput" value = "123456" placeholder="Enter a number">
-    <button type="button" id="clickme">Calculate</button>
-    <label id="resultLabel">Hiển thị kết quả</label>
-    <script type="module" src="/index.js"></script>
 
-    <p><a href="qnhu/index.html"> 	&gt;&gt;&gt;Quỳnh Như </a></p>
+  <body>
+
+    <div class="w3-container w3-blue">
+      <div class="w3-third "><h1>Tamayama</h1></div>
+      <div class="w3-third w3-center w3-padding w3-mobile">
+        <button class="w3-button w3-blue w3-xlarge w3-right " onclick="document.location=`qnhu/index.html`">Quỳnh Như</button> 
+      </div>
+    </div>
+    
+  <div class="w3-container">
+    <div class="w3-panel w3-card ">
+      <h2>Chuyển số thành chữ</h1>
+      <label for="numberInput">Nhập một số bất kỳ:</label>
+      <input type="text" id="numberInput" value = "19052016" placeholder="Enter a number">
+      <input type="submit" id="clickme" value="Chuyển đổi">
+
+      <p id="resultLabel">Hiển thị kết quả</p>
+
+      <script type="module" src="/index.js"></script>
+    </div>
+  </div>
+  
+  
 
   </body>
 </html>
