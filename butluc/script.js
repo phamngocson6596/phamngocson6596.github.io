@@ -10,8 +10,8 @@ danhmuc.forEach((value,index)=>{
         <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
         <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
         <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
-        <td class="amount"></td>
-        <td class="location"></td>
+        <td class="amount"><input type="text"></td>
+        <td class="location"><input type="text"></td>
     </tr>`)
 })
 
