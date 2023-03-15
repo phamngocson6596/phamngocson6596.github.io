@@ -14,7 +14,11 @@ th, td {
 .danhmuc {
     min-width: 120px;
 }
-
+.specialradio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 @page {
     size: A4;
     margin: 10px;
@@ -27,11 +31,17 @@ th, td {
     /* ... the rest of the rules ... */
   }
 
-input[type="text"] {
+td input[type="text"] {
     border: none;
     width: 100% !important;
   }
-
+td textarea {
+    resize: none;
+    border: none;
+    box-sizing: border-box;
+    height: auto; /* Set initial height to 1 line */
+    overflow: hidden; /* Add scrollbar when content exceeds the maximum height */
+}
 .custom-radio input[type="radio"] {
     position: absolute;
     opacity: 0;

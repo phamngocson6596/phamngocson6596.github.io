@@ -1,3 +1,4 @@
+
 export const danhmuc = [
     "Văn bản công chứng",
     "Phiếu yêu cầu công chứng",
@@ -34,5 +35,7 @@ export const danhmuc = [
     "HĐ hủy bỏ/ VB chấm dứt hợp đồng/VB giải chấp",
     "Cam đoan/Tường trình/Xác nhận/Đơn xin xác nhận/Đơn",
     "Công văn/TB thụ lý",
-    "Kết quả tra cứu ngăn chặn/giao dịch"
+    "Kết quả tra cứu ngăn chặn/giao dịch",
+    "................."
 ]
+
