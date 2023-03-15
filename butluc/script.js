@@ -10,8 +10,8 @@ danhmuc.forEach((value,index)=>{
         <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
         <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
         <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
-        <td class="amount"><input type="text"></td>
-        <td class="location"><input type="text"></td>
+        <td><input type="text" class="w3-center"></td>
+        <td class="location"><input type="text" class="w3-center"></td>
     </tr>`)
 })
 
@@ -26,16 +26,5 @@ table.insertAdjacentHTML("beforeend",
         <th></th>
     </tr>`)
     
-    const radios = document.querySelectorAll('.custom-radio input[type="radio"]');
-
-    radios.forEach((radio) => {
-      radio.addEventListener('click', event => {
-        if (radio.checked) {
-            console.log("It checked");
-        } else {
-            console.log("Not checked");
-        }
-      });
-    });
 
     
