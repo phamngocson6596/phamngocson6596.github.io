@@ -7,8 +7,8 @@ danhmuc.forEach((value,index)=>{
     `<tr>
         <td class="w3-center">${index+1}</td>
         <td class="listdoc">
-            <input type="radio" id="radio${index}" name="radio${index}" class="specialradio" tabindex="-1">
             <label for="radio${index}" class="nameofdoc">${value}</label>
+            <input type="radio" id="radio${index}" name="radio${index}" class="specialradio" tabindex="-1">
         </td>
         <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
         <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
@@ -24,8 +24,8 @@ table.insertAdjacentHTML("beforeend",
         <th colspan="5">TỔNG SỐ</th>
         
         <th><span class="sum"></span></th>
-        <th></th>
-    </tr>`)
+        <th><span class="largest"></span></th>
+    </tr>`);
     
 const alldanhmuc = document.querySelectorAll(".nameofdoc")
 alldanhmuc.forEach(danhmuc =>{
@@ -64,7 +64,7 @@ alldanhmuc.forEach(danhmuc =>{
           document.body.removeChild(input);
         });
       });
-})
+});
 
 const allminion = document.querySelectorAll(".miniontosum")
 allminion.forEach(minion=>{
@@ -79,4 +79,24 @@ allminion.forEach(minion=>{
         const sumbox = document.querySelector(".sum");
         sumbox.textContent = sum;
     });
-})
+});
+
+let textareas = document.querySelectorAll('.auto-expand');
+textareas.forEach(textarea=>{
+    textarea.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = `${this.scrollHeight}px`;
+
+        let largest = document.querySelector(".largest");
+        let str = textarea.value;
+        let arr = str.split(/[-;,]/);
+        let numArr = arr.map(Number);
+        let max = Math.max(...numArr);
+        if (largest.textContent==="") {
+            largest.textContent = max
+        };
+        if (largest.textContent < max) {
+            largest.textContent = max
+        };
+    });
+});
