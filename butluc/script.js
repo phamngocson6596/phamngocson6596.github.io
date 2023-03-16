@@ -10,9 +10,9 @@ danhmuc.forEach((value,index)=>{
             <label for="radio${index}" class="nameofdoc">${value}</label>
             <input type="radio" id="radio${index}" name="radio${index}" class="specialradio" tabindex="-1">
         </td>
-        <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
-        <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
-        <td class="tick"><label class="custom-radio"><input type="radio" name="radio${index}"><span class="checkmark"></span></label></td>
+        <td class="bc"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
+        <td class="sy"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
+        <td class="bp"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
         <td><input type="text" class="w3-center miniontosum"></td>
         <td class="location"><textarea class="w3-center auto-expand"rows="1" maxlength="500"></textarea></td>
     </tr>`)
@@ -20,9 +20,7 @@ danhmuc.forEach((value,index)=>{
 
 table.insertAdjacentHTML("beforeend", 
     `<tr>
-        
         <th colspan="5">TỔNG SỐ</th>
-        
         <th><span class="sum"></span></th>
         <th><span class="largest"></span></th>
     </tr>`);
@@ -100,3 +98,10 @@ textareas.forEach(textarea=>{
         };
     });
 });
+
+document.querySelector("#tablecontent tr:nth-of-type(1) .bc input").checked = true
+document.querySelector("#tablecontent tr:nth-of-type(1) textarea").value = "1-"
+document.querySelector("#tablecontent tr:nth-of-type(1) .miniontosum").value = 1
+document.querySelector("#tablecontent tr:nth-of-type(2) .miniontosum").value = 1
+document.querySelector("#tablecontent tr:nth-of-type(2) .bc input").checked = true
+

@@ -8,12 +8,15 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="adjust.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
   </head>
 
   <body>
     <h2 class="w3-center w3-large"><b>DANH MỤC HỒ SƠ</b></h2>
     <div class="w3-container" >
-        <table class="w3-table w3-bordered w3-border w3-hoverable" id="tablecontent">
+        <table class="w3-table w3-bordered w3-border w3-hoverable" >
+          <tbody>
             <tr class="w3-hover-none">
                 <th rowspan="2" class="w3-center">STT</th>
                 <th rowspan="2" class="w3-center danhmuc">DANH MỤC GIẤY TỜ</th>
@@ -27,6 +30,8 @@
                 <th class="w3-center">SY</th>
                 <th class="w3-center">BP</th>
             </tr>
+          </tbody>
+          <tbody id="tablecontent"></tbody>
         </table>
         <div class="w3-container w3-center">
           <div class="w3-bar" style="width: 100%;">
