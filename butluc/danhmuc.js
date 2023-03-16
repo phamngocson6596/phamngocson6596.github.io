@@ -33,7 +33,7 @@ export const danhmuc = [
     "HĐ tín dụng",
     "Văn bản đăng ký chữ ký mẫu",
     "HĐ hủy bỏ/ VB chấm dứt hợp đồng/VB giải chấp",
-    "Cam đoan/Tường trình/Xác nhận/Đơn xin xác nhận/Đơn",
+    "Cam đoan/Cam kết/Tường trình/Xác nhận/Đơn xin xác nhận/Đơn",
     "Công văn/TB thụ lý",
     "Kết quả tra cứu ngăn chặn/giao dịch",
     "................."
