@@ -29,8 +29,15 @@ th, td {
       height: auto;
     }
     /* ... the rest of the rules ... */
-  }
+}
 
+@media (min-width: 1000px) {
+    body {
+      width: 70%;
+      margin: 0 auto;
+    }
+}
+  
 td input[type="text"] {
     border: none;
     width: 100% !important;
