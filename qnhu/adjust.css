@@ -1,4 +1,9 @@
-img {
-    max-width: 100%;
+
+
+@media (min-width: 1200px) {
+    body {
+      width: 60%;
+      margin: 0 auto;
+    }
 }
 

@@ -85,6 +85,7 @@ textareas.forEach(textarea=>{
         this.style.height = 'auto';
         this.style.height = `${this.scrollHeight}px`;
 
+                
         let largest = document.querySelector(".largest");
         let str = textarea.value;
         let arr = str.split(/[-;,]/);
@@ -93,7 +94,9 @@ textareas.forEach(textarea=>{
         if (largest.textContent==="") {
             largest.textContent = max
         };
-        if (largest.textContent < max) {
+        let imax = largest.textContent;
+
+        if (imax < max) {
             largest.textContent = max
         };
     });
