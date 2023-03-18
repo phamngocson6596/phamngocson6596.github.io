@@ -4,7 +4,7 @@ const table = document.querySelector("#tablecontent");
 
 danhmuc.forEach((value,index)=>{
     table.insertAdjacentHTML("beforeend", 
-    `<tr>
+    `<tr class="w3-hover-pale-blue">
         <td class="w3-center">${index+1}</td>
         <td class="listdoc">
             <label for="radio${index}" class="nameofdoc">${value}</label>
@@ -19,7 +19,7 @@ danhmuc.forEach((value,index)=>{
 })
 
 table.insertAdjacentHTML("beforeend", 
-    `<tr>
+    `<tr class="w3-hover-none">
         <th colspan="5">TỔNG SỐ</th>
         <th><span class="sum"></span></th>
         <th><span class="largest"></span></th>

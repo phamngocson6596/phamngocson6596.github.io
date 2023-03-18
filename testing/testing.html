@@ -1,41 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Web Tama</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-
-.auto-expand {
-    box-sizing: border-box;
-    width: 200px; /* Fixed width */
-    height: auto; /* Allows element to expand vertically */
-    overflow: hidden; /* Prevents vertical scrollbar */
+<html>
+<head>
+<style>
+.heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
 }
 
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: red;
+  border-radius: 50px 50px 0 0;
+}
 
-    </style>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  </head>
+.heart:before {
+    left: -5px; 
+    transform-origin:left center; 
+    transform: rotate(-45deg);
+}
 
-  <body>
+.heart:after {
+    left:-45px; 
+    transform-origin:right center; 
+    transform: rotate(45deg);
+}
+</style>
+</head>
+<body>
 
-    <textarea id="myTextarea" class="auto-expand" rows="1" maxlength="500"></textarea>
+<div class="heart"></div>
+<div style="width: 50px; height: 50px; background-image: url('data:image/svg+xml;utf8,<svg viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;%23FF0000&quot;><path d=&quot;M12 21.35l-10.84-9.84c-1.64-1.49-1.64-3.92 0-5.41 1.64-1.5 4.31-1.5 5.94 0L12 6.06l5.9-5.36c1.63-1.5 4.3-1.5 5.94 0 1.63 1.49 1.63 3.92 0 5.41L12 21.35z&quot;/></svg>')"></div>
 
-
-    <script>
-
-
-
-
-var textarea = document.getElementById('myTextarea');
-textarea.addEventListener('input', function() {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
-});
-
-    </script>
-  </body>
+</body>
 </html>
