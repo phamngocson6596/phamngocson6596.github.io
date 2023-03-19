@@ -16,7 +16,7 @@ listImage.forEach(img=>{
 })
 
 const images = document.querySelectorAll('img[data-src]');
-const observer = new IntersectionObserver(onIntersection);
+const observer = new IntersectionObserver(onIntersection, {rootMargin: "0px 0px 200px 0px"});
 
 images.forEach(image => {
     observer.observe(image);
