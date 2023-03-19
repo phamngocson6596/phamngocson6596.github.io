@@ -9,7 +9,7 @@ listImage.forEach(img=>{
         <div class="w3-display-container qnhu">
             <img src="/images/placeholder.jpg" data-src="${img}" alt="qnhu" class="w3-card-4 w3-round-large" style="width:100%">
             <div class="w3-display-bottomright w3-display-hover w3-padding">
-                <i class="far fa-heart fa-5x w3-text-red"></i>
+                <i class="far fa-heart w3-xxlarge w3-text-red"></i>
             </div>
         </div>
     </div>`)

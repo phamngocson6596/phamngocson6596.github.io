@@ -4,11 +4,16 @@ const table = document.querySelector("#tablecontent");
 
 danhmuc.forEach((value,index)=>{
     table.insertAdjacentHTML("beforeend", 
-    `<tr class="w3-hover-pale-blue">
-        <td class="w3-center">${index+1}</td>
-        <td class="listdoc">
-            <label for="radio${index}" class="nameofdoc">${value}</label>
-            <input type="radio" id="radio${index}" name="radio${index}" class="specialradio" tabindex="-1">
+    `<tr class="w3-hover-pale-blue hangnoidung">
+        <td class="w3-center">
+            <span>${index+1}</span>
+        </td>
+        <td class="w3-bar">
+            <div class="listdoc w3-bar-item" style="padding-top:0px;padding-bottom:0px">
+                <label for="radio${index}" class="nameofdoc">${value}</label>
+                <input type="radio" id="radio${index}" name="radio${index}" class="specialradio" tabindex="-1">
+            </div>
+            <div class="w3-bar-item w3-right" style="padding-top:0px;padding-bottom:0px">CL</div>
         </td>
         <td class="bc"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
         <td class="sy"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
@@ -107,4 +112,8 @@ document.querySelector("#tablecontent tr:nth-of-type(1) textarea").value = "1-"
 document.querySelector("#tablecontent tr:nth-of-type(1) .miniontosum").value = 1
 document.querySelector("#tablecontent tr:nth-of-type(2) .miniontosum").value = 1
 document.querySelector("#tablecontent tr:nth-of-type(2) .bc input").checked = true
-
+window.addEventListener("load", event => {
+    document.querySelector(".w3-badge.w3-button").onclick = function() {
+        location.reload(true);
+    }
+});
