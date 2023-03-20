@@ -8,12 +8,12 @@ danhmuc.forEach((value,index)=>{
         <td class="w3-center">
             <span>${index+1}</span>
         </td>
-        <td class="w3-bar">
-            <div class="listdoc w3-bar-item" style="padding-top:0px;padding-bottom:0px">
+        <td class="w3-cell-row">
+            <div class="w3-cell" style="padding-top:0px;padding-bottom:0px">
                 <label for="radio${index}" class="nameofdoc">${value}</label>
                 <input type="radio" id="radio${index}" name="radio${index}" class="specialradio" tabindex="-1">
             </div>
-            <div class="w3-bar-item w3-right" style="padding-top:0px;padding-bottom:0px">CL</div>
+            <div class="w3-cell" style="padding-top:0px;padding-bottom:0px">CL</div>
         </td>
         <td class="bc"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
         <td class="sy"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
