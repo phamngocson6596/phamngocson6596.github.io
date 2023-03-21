@@ -2,39 +2,48 @@ th, td {
     border: 1px solid rgb(150, 150, 150);
     padding: 1px !important;
     vertical-align: middle !important;
-    text-align: center !important;
+    text-align: center ;
 }
-.listdoc {
+.nameofdoc {
     text-align: left !important;
-    padding-left: 5px !important;
 }
-.amount {
+.amountHeader {
     width: 5% !important;
     min-width: 50px;
 }
-#butlucHead {
-    min-width: 160px;
+.butlucHeader {
+    width: 200px;
 }
-.danhmuc {
+.danhmucHeader {
     min-width: 120px;
 }
+.typeHeader {
+    max-width: 35px;
+}
+
+
 .specialradio {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
-.w3-badge.w3-button {
+.w3-badge.reload {
     position: fixed;
     bottom: 20px;
     right: 20px;
 }
-
-
-
-.sothutu:hover {
-    display: none !important;
+.w3-badge.print {
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
 }
 
+.hiddenButton {
+    display: none;
+}
+.hangnoidung:hover .hiddenButton {
+    display:table-cell;
+}
 
 @page {
     size: A4;
@@ -46,6 +55,9 @@ th, td {
       height: auto;
     }
     .w3-badge.w3-button {
+        display: none;
+    }
+    .hiddenButton {
         display: none;
     }
 }
