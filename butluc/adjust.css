@@ -2,33 +2,64 @@ th, td {
     border: 1px solid rgb(150, 150, 150);
     padding: 1px !important;
     vertical-align: middle !important;
-    text-align: center !important;
+    text-align: center ;
 }
-.listdoc {
+.nameofdoc {
     text-align: left !important;
-    padding-left: 5px !important;
 }
-.amount {
+.amountHeader {
     width: 5% !important;
+    min-width: 50px;
 }
-.danhmuc {
+.butlucHeader {
+    width: 200px;
+}
+.danhmucHeader {
     min-width: 120px;
 }
+.typeHeader {
+    max-width: 35px;
+}
+
+
 .specialradio {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
+.w3-badge.reload {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.w3-badge.print {
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+}
+
+.hiddenButton {
+    display: none;
+}
+.hangnoidung:hover .hiddenButton {
+    display:table-cell;
+}
+
 @page {
     size: A4;
     margin: 10px;
   } 
-  @media print {
+@media print {
     html, body {
       width: 260mm;
       height: auto;
     }
-    /* ... the rest of the rules ... */
+    .w3-badge.w3-button {
+        display: none;
+    }
+    .hiddenButton {
+        display: none;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -49,8 +80,9 @@ td .auto-expand {
     height: auto; /* Set initial height to 1 line */
     width: 100%;
     vertical-align: middle;
-    overflow: hidden; /* Add scrollbar when content exceeds the maximum height */
+    overflow: hidden; 
 }
+
 .custom-radio input[type="radio"] {
     position: absolute;
     opacity: 0;
@@ -63,7 +95,6 @@ td .auto-expand {
     width: 100%;
     height: 20px;
     border-radius: 50%;
-    outline: none; /* hide default ring */
 }
 
 .custom-radio .checkmark::before {

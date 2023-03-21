@@ -49,7 +49,6 @@ export const listImage = [
   "https://lh3.googleusercontent.com/-BV_hBbFKxQ-wtapCSCE6ry7HJKztlgPUKc_bDkHuzP45lwlmALye8y8XZjhGLfhczahhAZprLQoESVpF9It3d5LFcKPbRwK7YQEZzreOK1iuwmwY5cFPoWhjBYdBy-hsMXFOswZeeM=w1920-h1080",
   "https://lh3.googleusercontent.com/aT-LXG0uqofMBWLQbTJzWJ6Jj8aFA8w3OO9mxZxel_VrUlqrBvYVkBB4oAWk9nHX5IUMUGvXUvczua7e8_6obgaV6XnP-i__i8qVcKJBwtRu4odm-be66-3IsRX5tZPgfT8DD_ORjRQ=w1920-h1080",
   "https://lh3.googleusercontent.com/oQSjB2YVajdx28FC5om4VOSdsMw4BjSgp2pplmS4p5SwWkCAIRX4iug_rDdRUjRI6yNPHLfkgsvzca7JJUAdLFQwi2NTDYRemBapLqGtyx6JV3j_MB_MhGTdizZUcaN9bVMXay_rgMI=w1920-h1080",
-  "https://lh3.googleusercontent.com/vbKBw8VPWHxL8wc02O6sjsDdmh03NeSyKpU7EpirbQX0rqGEMI0I7OU1mmS1yGl-TuqqkHH9lP6ECv5nxgAp3XWSWzvNWnWHaMEaNPcwAlqNngdZ5IGOIDNmnb11ZStQOxXYkZ1f_Lk=w1920-h1080",
   "https://lh3.googleusercontent.com/s-Wyn_mHK-rmc0ZnQBRqWa72yQxzjoSJ4lH1rJVHqvxewPTl_-zq8pQ9IX4TMpcSSTiyF2lEyNY4-cwl2-vyyKOYAGAj0_A4HI7Lh4848xOW7X89mcWniHaMfKseUpt28Oz9uL_hzf0=w1920-h1080",
   "https://lh3.googleusercontent.com/0c-TuvBT_TviWZT9WhrDIRDrx_uX5prSBiDC2oADW9nTyMSIE_pJxbDeApnYwycT5cl0QF6KvV9zVoCh1WSNhC0jtIR4BBllsh54aIVd4AwCKWzD0F9qFFuHK2xYl05GtvJF90UfLYQ=w1920-h1080",
   "https://lh3.googleusercontent.com/7NLRk-tC6kkbTwvslqUFQ6kWtCpUpNKTQjhq5xm_xN8uZXXIqAaGEWY99y57HG3JZmyJzgVkls03NUAztGtDunEHvbECGdc_klBM67Q5ZpBkmkjkVn9yLAaHP1LEfGw-ej9h5r4QBgc=w1920-h1080",
