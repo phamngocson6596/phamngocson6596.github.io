@@ -8,7 +8,7 @@ danhmuc.forEach((value,index)=>{
         <td class="w3-center">${index+1}</td>
             <td >
                 <div class="w3-cell-row" style="display:table">
-                    <div class="w3-cell" style="padding-left:5px">
+                    <div class="w3-cell contentHaveToShared" style="padding-left:5px">
                         <label for="radio${index}" class="nameofdoc">${value}</label>
                         <input type="radio" id="radio${index}" name="radio${index}" class="specialradio" tabindex="-1">
                     </div>
@@ -116,12 +116,15 @@ document.querySelector(".w3-badge.print").onclick = function() {
     window.print();
 }
 const resetMiniButtons = document.querySelectorAll(".miniReset")
-resetMiniButtons.forEach(button=>{
-    button.addEventListener("click", ()=>{
-        const parent = button.parentElement.parentElement.parentElement.parentElement;
-        const no = parent.querySelector("td").textContent;
-        parent.innerHTML = sessionStorage[`row${no}`];
-    })
+    resetMiniButtons.forEach(button=>{
+        button.addEventListener("click", ()=>{
+            const parent = button.parentNode.parentNode.parentNode.parentNode;
+            parent.querySelector(".bc input").checked = false;
+            parent.querySelector(".sy input").checked = false;
+            parent.querySelector(".bp input").checked = false;
+            parent.querySelector(".miniontosum").value = "";
+            parent.querySelector("textarea").value = "";
+        })
 })
 
 document.querySelector("#tablecontent tr:nth-of-type(1) .bc input").checked = true
