@@ -3,35 +3,34 @@ import { danhmuc } from "./danhmuc.js";
 const table = document.querySelector("#tablecontent");
 
 danhmuc.forEach((value,index)=>{
-    sessionStorage.setItem(`row${index+1}`,`
-    <td class="w3-center">${index+1}</td>
-        <td >
-            <div class="w3-cell-row" style="display:table">
-                <div class="w3-cell" style="padding-left:5px">
-                    <label for="radio${index}" class="nameofdoc">${value}</label>
-                    <input type="radio" id="radio${index}" name="radio${index}" class="specialradio" tabindex="-1">
-                </div>
-                <div class="hiddenButton" style="width:5%">
-                    <div class="w3-button w3-text-blue miniReset" title="Reset" style="padding:0px"><i class="fas fa-redo"></i></div>  
-                </div>
-            </div>
-        </td>
-        <td class="bc"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
-        <td class="sy"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
-        <td class="bp"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
-        <td><input type="text" class="w3-center miniontosum"></td>
-        <td class="location"><textarea class="w3-center auto-expand" rows="1" maxlength="500"></textarea></td>`);
     table.insertAdjacentHTML("beforeend", 
     `<tr class="w3-hover-pale-blue hangnoidung">
-        ${sessionStorage[`row${index+1}`]}
+        <td class="w3-center">${index+1}</td>
+            <td >
+                <div class="w3-cell-row" style="display:table">
+                    <div class="w3-cell" style="padding-left:5px">
+                        <label for="radio${index}" class="nameofdoc">${value}</label>
+                        <input type="radio" id="radio${index}" name="radio${index}" class="specialradio" tabindex="-1">
+                    </div>
+                    <div class="hiddenButton w3-cell-middle" style="width:5%">
+                        <div class="w3-button w3-text-blue editContent w3-cell" title="Edit" style="padding:0px"><i class="fas fa-edit"></i></div>  
+                        <div class="w3-button w3-text-blue miniReset w3-cell" title="Reset" style="padding:0px"><i class="fas fa-redo"></i></div>
+                    </div>
+                </div>
+            </td>
+            <td class="bc"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
+            <td class="sy"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
+            <td class="bp"><label class="custom-radio"><input type="radio" name="radio${index}" tabindex="-1"><span class="checkmark"></span></label></td>
+            <td><input type="text" class="w3-center miniontosum"></td>
+        <td class="location"><textarea class="w3-center auto-expand" rows="1" maxlength="500"></textarea></td>
     </tr>`)
 })
 
 table.insertAdjacentHTML("beforeend", 
     `<tr class="w3-hover-none">
         <th colspan="5" class="w3-center">TỔNG SỐ</th>
-        <th><span class="sum"></span></th>
-        <th><span class="largest"></span></th>
+        <th class="w3-center"><span class="sum"></span></th>
+        <th class="w3-center"><span class="largest"></span></th>
     </tr>`);
     
 const alldanhmuc = document.querySelectorAll(".nameofdoc")
