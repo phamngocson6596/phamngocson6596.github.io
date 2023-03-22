@@ -1,4 +1,3 @@
-
 export const danhmuc = [
     "Văn bản công chứng",
     "Phiếu yêu cầu công chứng",
@@ -39,3 +38,27 @@ export const danhmuc = [
     "................."
 ]
 
+export function tinhtong(nodes){
+    let sum = 0;
+    nodes.forEach(minion=>{
+        if (!isNaN(minion.value) && minion.value !== "") {
+            sum += Number.parseInt(minion.value, 10);
+            }
+    });
+    const sumbox = document.querySelector(".sum");
+    sumbox.textContent = sum;
+}
+
+export function timMax(nodes) {
+    let maxBig = 0;
+    nodes.forEach(node =>{
+        if (node.value && node.value !== "") {
+            let str = node.value;
+            let arr = str.split(/[-;,]/);
+            let numArr = arr.map(Number);
+            let max = Math.max(...numArr);
+            if (max>maxBig){maxBig=max};
+        }
+    });
+    document.querySelector(".largest").textContent = maxBig;
+}
