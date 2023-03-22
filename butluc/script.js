@@ -6,7 +6,7 @@ danhmuc.forEach((value,index)=>{
     table.insertAdjacentHTML("beforeend", 
     `<tr class="w3-hover-pale-blue hangnoidung">
         <td class="w3-center">${index+1}</td>
-            <td >
+            <td class="motherContent${index}">
                 <div class="w3-cell-row" style="display:table">
                     <div class="w3-cell contentHaveToShared" style="padding-left:5px">
                         <label for="radio${index}" class="nameofdoc">${value}</label>
@@ -38,8 +38,7 @@ const alldanhmuc = document.querySelectorAll(".nameofdoc")
 alldanhmuc.forEach(danhmuc =>{
     danhmuc.addEventListener("dblclick", function() {
         // Create text input element
-        const input = document.createElement("input");
-        input.type = "text";
+        const input = document.createElement("textarea");
         input.value = danhmuc.textContent;
 
         // Set position of input element
@@ -73,7 +72,7 @@ alldanhmuc.forEach(danhmuc =>{
       });
 });
 
-const allminion = document.querySelectorAll(".miniontosum")
+const allminion = document.querySelectorAll(".miniontosum");
 allminion.forEach(minion=>{
     minion.addEventListener("keyup", ()=>{
         tinhtong(allminion);
@@ -89,13 +88,15 @@ textareas.forEach(textarea=>{
         timMax(textareas);
     });
 });
-document.querySelector(".w3-badge.reload").onclick = function() {
-    location.reload(true);
-};
-document.querySelector(".w3-badge.print").onclick = function() {
-    window.print();
-};
+const editButtons = document.querySelectorAll(".w3-button.miniReset");
+
 const resetMiniButtons = document.querySelectorAll(".miniReset")
+resetMiniButtons.forEach(button=>{
+    button.addEventListener("click", ()=>{
+        
+    })
+});
+
 resetMiniButtons.forEach(button=>{
     button.addEventListener("click", ()=>{
         const parent = button.parentNode.parentNode.parentNode.parentNode;
@@ -108,6 +109,13 @@ resetMiniButtons.forEach(button=>{
         timMax(textareas);
     })
 });
+
+document.querySelector(".w3-badge.reload").onclick = function() {
+    location.reload(true);
+};
+document.querySelector(".w3-badge.print").onclick = function() {
+    window.print();
+};
 
 document.querySelector("#tablecontent tr:nth-of-type(1) .bc input").checked = true;
 document.querySelector("#tablecontent tr:nth-of-type(1) textarea").value = "1-";
