@@ -43,8 +43,22 @@
         </div>
     </div>
     
-    <div class="w3-badge w3-button w3-blue reload" title="Tải lại trang"><i class="fas fa-redo w3-xxlarge"></i></div>  
-    <div class="w3-badge w3-button w3-blue print" title="In trang"><i class="fas fa-print w3-xxlarge"></i></div>  
+    <div class="w3-badge w3-button w3-blue reload w3-hide-small" title="Tải lại trang" style="right: 20px;"><i class="fas fa-redo w3-xxlarge"></i></div>  
+    <div class="w3-badge w3-button w3-blue print w3-hide-small" title="In trang" style="right: 100px;"><i class="fas fa-print w3-xxlarge"></i></div>  
+    <div class="w3-badge w3-button w3-blue save w3-hide-small" title="Lưu mẫu" style="right: 180px;"><i class="fas fa-save w3-xxlarge"></i></div>  
+
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-padding-large">
+        <div class="w3-container">
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <h2>Lưu trang!</h2>
+          <p>Lưu trang này cho lần sau? Sau khi ấn lưu, mỗi lần load lại sẽ thấy format giống vậy.<br><i>Dùng để tùy chỉnh trang bút lục cá nhân</i></p>
+          <button type="button" class="w3-button w3-blue w3-third" id="dongyButton">Đồng ý</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-red w3-third">Hủy bỏ</button>
+          <button type="button" onclick="localStorage.removeItem(`localDanhmuc`);document.getElementById('id01').style.display='none'" class="w3-button w3-green w3-third" title="Xóa bộ nhớ, lấy lại mẫu cũ">Đặt lại</button>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="script.js"></script>
 

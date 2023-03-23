@@ -27,15 +27,9 @@ th, td {
     -moz-appearance: none;
     appearance: none;
 }
-.w3-badge.reload {
+.w3-badge.w3-button.w3-blue {
     position: fixed;
     bottom: 20px;
-    right: 20px;
-}
-.w3-badge.print {
-    position: fixed;
-    bottom: 20px;
-    right: 100px;
 }
 
 .hiddenButton {
@@ -57,8 +51,8 @@ th, td {
     .w3-badge.w3-button {
         display: none;
     }
-    .hiddenButton {
-        display: none;
+    .hangnoidung:hover .hiddenButton {
+        display:none;
     }
 }
 
