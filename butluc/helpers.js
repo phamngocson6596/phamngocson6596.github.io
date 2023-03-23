@@ -69,6 +69,5 @@ export function saveDoc() {
     list.forEach(li => {
         listArr.push(li.textContent);
     });
-    localStorage.localDanhmuc = listArr.join("!");
-    console.log(localStorage.localDanhmuc)
+    localStorage.localDanhmuc = JSON.stringify(listArr);
 };

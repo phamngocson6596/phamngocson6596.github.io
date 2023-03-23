@@ -3,7 +3,7 @@ import { danhmuc, tinhtong, timMax, saveDoc } from "./helpers.js";
 const table = document.querySelector("#tablecontent");
 
 let iDanhmuc = danhmuc;
-if (localStorage.localDanhmuc) {iDanhmuc=localStorage.localDanhmuc.split("!")}
+if (localStorage.localDanhmuc) {iDanhmuc=JSON.parse(localStorage.localDanhmuc)}
 
 iDanhmuc.forEach((value,index)=>{
     table.insertAdjacentHTML("beforeend", 
