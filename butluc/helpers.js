@@ -36,7 +36,7 @@ export const danhmuc = [
     "Công văn/TB thụ lý",
     "Kết quả tra cứu ngăn chặn/giao dịch",
     "................."
-]
+];
 
 export function tinhtong(nodes){
     let sum = 0;
@@ -47,7 +47,7 @@ export function tinhtong(nodes){
     });
     const sumbox = document.querySelector(".sum");
     sumbox.textContent = sum;
-}
+};
 
 export function timMax(nodes) {
     let maxBig = 0;
@@ -61,4 +61,14 @@ export function timMax(nodes) {
         }
     });
     document.querySelector(".largest").textContent = maxBig;
-}
+};
+
+export function saveDoc() {
+    const list = document.querySelectorAll(".nameofdoc");
+    const listArr = [];
+    list.forEach(li => {
+        listArr.push(li.textContent);
+    });
+    localStorage.localDanhmuc = listArr.join("!");
+    console.log(localStorage.localDanhmuc)
+};

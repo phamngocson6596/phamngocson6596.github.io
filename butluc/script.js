@@ -1,8 +1,11 @@
-import { danhmuc, tinhtong, timMax } from "./helpers.js";
+import { danhmuc, tinhtong, timMax, saveDoc } from "./helpers.js";
 
 const table = document.querySelector("#tablecontent");
 
-danhmuc.forEach((value,index)=>{
+let iDanhmuc = danhmuc;
+if (localStorage.localDanhmuc) {iDanhmuc=localStorage.localDanhmuc.split("!")}
+
+iDanhmuc.forEach((value,index)=>{
     table.insertAdjacentHTML("beforeend", 
     `<tr class="w3-hover-pale-blue hangnoidung">
         <td class="w3-center">${index+1}</td>
@@ -115,6 +118,13 @@ document.querySelector(".w3-badge.reload").onclick = function() {
 };
 document.querySelector(".w3-badge.print").onclick = function() {
     window.print();
+};
+document.querySelector(".w3-badge.save").onclick = function() {
+    document.getElementById('id01').style.display='block';
+}; 
+document.querySelector("#dongyButton").onclick = function(){
+    saveDoc(); 
+    document.getElementById('id01').style.display='none';
 };
 
 document.querySelector("#tablecontent tr:nth-of-type(1) .bc input").checked = true;
