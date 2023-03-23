@@ -93,13 +93,7 @@ textareas.forEach(textarea=>{
 });
 const editButtons = document.querySelectorAll(".w3-button.miniReset");
 
-const resetMiniButtons = document.querySelectorAll(".miniReset")
-resetMiniButtons.forEach(button=>{
-    button.addEventListener("click", ()=>{
-        
-    })
-});
-
+const resetMiniButtons = document.querySelectorAll(".miniReset");
 resetMiniButtons.forEach(button=>{
     button.addEventListener("click", ()=>{
         const parent = button.parentNode.parentNode.parentNode.parentNode;
