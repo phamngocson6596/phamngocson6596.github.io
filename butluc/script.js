@@ -94,16 +94,29 @@ textareas.forEach(textarea=>{
 const editButtons = document.querySelectorAll(".w3-button.editContent");
 editButtons.forEach(button=>{
     button.addEventListener("click", ()=>{
-        const input = document.createElement("textarea");
-        input.value = danhmuc.textContent;
-
         const mother = document.querySelector(`#motherContent${button.id.substring(4)}`);
+        const title = mother.querySelector(".nameofdoc");
         const children = mother.querySelector("div");
 
-        input.style.height = mother.style.height;
-        input.style.width = mother.style.width;
+        const input = document.createElement("textarea");
+        input.value = title.textContent;
+
+
+        input.style.boxSizing = "border-box"; // Set box-sizing to border-box
+        input.style.height = "100%"; // Set height to 100% of mother container
+        input.style.width = "100%"; // Set width to 100% of mother container
+
         mother.removeChild(children);
         mother.appendChild(input);
+        input.focus();
+        input.addEventListener("blur", function() {
+            // Apply new text content to paragraph element
+            mother.appendChild(children);
+            title.textContent = input.value;
+
+            // Remove input element from document
+            mother.removeChild(input);
+          });
     })
 });
 
