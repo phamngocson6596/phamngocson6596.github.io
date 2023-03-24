@@ -71,3 +71,26 @@ export function saveDoc() {
     });
     localStorage.localDanhmuc = JSON.stringify(listArr);
 };
+
+export function editDoc(mother) {
+    const title = mother.querySelector(".nameofdoc");
+    const children = mother.querySelector("div");
+
+    const input = document.createElement("textarea");
+    input.value = title.textContent;
+
+    input.style.boxSizing = "border-box"; 
+    input.style.height = "100%"; 
+    input.style.width = "100%"; 
+    input.style.overflow = "hidden";
+    input.style.resize = "none";
+
+    mother.removeChild(children);
+    mother.appendChild(input);
+    input.focus();
+    input.addEventListener("blur", function() {
+        mother.appendChild(children);
+        title.textContent = input.value;
+        mother.removeChild(input);
+      });
+}
