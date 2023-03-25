@@ -24,7 +24,7 @@ iDanhmuc.forEach((value,index)=>{
         <td class="sy"><label class="custom-radio"><input type="radio" name="radio${index+1}" tabindex="-1"><span class="checkmark"></span></label></td>
         <td class="bp"><label class="custom-radio"><input type="radio" name="radio${index+1}" tabindex="-1"><span class="checkmark"></span></label></td>
         <td><input type="text" class="w3-center miniontosum"></td>
-        <td class="location"><textarea class="w3-center auto-expand" rows="1" maxlength="500"></textarea></td>
+        <td class="location"><textarea class="w3-center auto-expand" rows="1"></textarea></td>
     </tr>`)
 });
 
@@ -46,9 +46,9 @@ allminion.forEach(minion=>{
 let textareas = document.querySelectorAll('.auto-expand');
 textareas.forEach(textarea=>{
     textarea.addEventListener('input', function() {
-        this.style.height = 'auto';
-        this.style.height = `${this.scrollHeight}px`;
-
+        if (this.scrollHeight > this.clientHeight) {
+            this.rows++;
+          }
         timMax(textareas);
     });
 });
