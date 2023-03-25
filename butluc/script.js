@@ -1,4 +1,4 @@
-import { danhmuc, tinhtong, timMax, saveDoc, editDoc } from "./helpers.js";
+import { danhmuc, tinhtong, timMax, saveDoc } from "./helpers.js";
 
 const table = document.querySelector("#tablecontent");
 
@@ -12,8 +12,7 @@ iDanhmuc.forEach((value,index)=>{
         <td id="motherContent${index+1}">
             <div class="w3-cell-row" style="display:table">
                 <div class="w3-cell contentHaveToShared" style="padding-left:5px">
-                    <label for="radio${index+1}" class="nameofdoc">${value}</label>
-                    <input type="radio" id="radio${index+1}" name="radio${index+1}" class="specialradio" tabindex="-1">
+                    <label class="nameofdoc">${value}</label>
                 </div>
                 <div class="hiddenButton w3-cell-middle" style="width:5%">
                     <div class="w3-button w3-text-blue editContent w3-cell" id="edit${index+1}" title="Chỉnh sửa" style="padding:0px;padding-left:5px;"><i class="fas fa-edit"></i></div>  
@@ -36,44 +35,6 @@ table.insertAdjacentHTML("beforeend",
         <th class="w3-center"><span class="largest"></span></th>
     </tr>`
 );
-    
-const alldanhmuc = document.querySelectorAll(".nameofdoc")
-alldanhmuc.forEach(danhmuc =>{
-    danhmuc.addEventListener("dblclick", function() {
-        // Create text input element
-        const input = document.createElement("textarea");
-        input.value = danhmuc.textContent;
-
-        // Set position of input element
-        let x = danhmuc.offsetLeft;
-        let y = danhmuc.offsetTop;
-        let parent = danhmuc.offsetParent;
-        while (parent) {
-        x += parent.offsetLeft;
-        y += parent.offsetTop;
-        parent = parent.offsetParent;
-        }
-        input.style.position = "absolute";
-        input.style.top = y + "px";
-        input.style.left = x + "px";
-        input.style.width = `${danhmuc.offsetWidth + 200}px`;
-
-        // Add input element to document
-        document.body.appendChild(input);
-
-        // Focus input element and select text
-        input.focus();
-
-        // Handle input element blur event
-        input.addEventListener("blur", function() {
-          // Apply new text content to paragraph element
-          danhmuc.textContent = input.value;
-
-          // Remove input element from document
-          document.body.removeChild(input);
-        });
-      });
-});
 
 const allminion = document.querySelectorAll(".miniontosum");
 allminion.forEach(minion=>{
@@ -92,10 +53,25 @@ textareas.forEach(textarea=>{
     });
 });
 const editButtons = document.querySelectorAll(".w3-button.editContent");
-const mother = document.querySelector(`#motherContent${button.id.substring(4)}`);
-
 editButtons.forEach(button=>{
-    button.addEventListener("click", editDoc(mother));
+    button.addEventListener("click", ()=>{
+        const mother = document.querySelector(`#motherContent${button.id.substring(4)}`);
+        const title = mother.querySelector(".nameofdoc");
+        const children = mother.querySelector("div");
+
+        const input = document.createElement("textarea");
+        input.value = title.textContent;
+        input.classList.add("customEditBox");
+
+        mother.removeChild(children);
+        mother.appendChild(input);
+        input.focus();
+        input.addEventListener("blur", function() {
+            mother.appendChild(children);
+            title.textContent = input.value;
+            mother.removeChild(input);
+          });
+    })
 });
 
 const resetMiniButtons = document.querySelectorAll(".miniReset");
