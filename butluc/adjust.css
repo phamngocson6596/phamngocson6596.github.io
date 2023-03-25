@@ -62,7 +62,14 @@ th, td {
       margin: 0 auto;
     }
 }
-  
+
+.customEditBox {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    resize: none;
+}
 td input[type="text"] {
     border: none;
     width: 100% !important;
