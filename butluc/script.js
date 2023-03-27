@@ -24,7 +24,7 @@ iDanhmuc.forEach((value,index)=>{
         <td class="sy"><label class="custom-radio"><input type="radio" name="radio${index+1}" tabindex="-1"><span class="checkmark"></span></label></td>
         <td class="bp"><label class="custom-radio"><input type="radio" name="radio${index+1}" tabindex="-1"><span class="checkmark"></span></label></td>
         <td><input type="text" class="w3-center miniontosum"></td>
-        <td class="location"><textarea class="w3-center auto-expand" rows="1" maxlength="500"></textarea></td>
+        <td class="location"><textarea class="w3-center auto-expand" rows="1"></textarea></td>
     </tr>`)
 });
 
@@ -46,9 +46,9 @@ allminion.forEach(minion=>{
 let textareas = document.querySelectorAll('.auto-expand');
 textareas.forEach(textarea=>{
     textarea.addEventListener('input', function() {
-        this.style.height = 'auto';
-        this.style.height = `${this.scrollHeight}px`;
-
+        if (this.scrollHeight > this.clientHeight) {
+            this.rows++;
+          }
         timMax(textareas);
     });
 });
@@ -101,9 +101,29 @@ document.querySelector("#dongyButton").onclick = function(){
     saveDoc(); 
     document.getElementById('id01').style.display='none';
 };
+document.querySelector("#tenthuky").onclick = function() {
+    const ten = this.querySelector("b");
+    const input = document.createElement("input");
+    input.placeholder = ten.textContent;
+    input.type = "text";
+
+    this.removeChild(ten);
+    this.appendChild(input);
+    input.focus();
+    input.addEventListener("blur", ()=> {
+        if (input.value!==""){ten.textContent = input.value};
+        localStorage.tenthuky = input.value;
+        this.appendChild(ten);
+        this.removeChild(input);
+      });
+}
 
 document.querySelector("#tablecontent tr:nth-of-type(1) .bc input").checked = true;
 document.querySelector("#tablecontent tr:nth-of-type(1) textarea").value = "1-";
 document.querySelector("#tablecontent tr:nth-of-type(1) .miniontosum").value = 1;
 document.querySelector("#tablecontent tr:nth-of-type(2) .miniontosum").value = 1;
 document.querySelector("#tablecontent tr:nth-of-type(2) .bc input").checked = true;
+
+if (localStorage.tenthuky){
+document.querySelector("#tenthuky").querySelector("b").textContent = localStorage.tenthuky;
+}

@@ -20,17 +20,34 @@ th, td {
 .typeHeader {
     max-width: 35px;
 }
-
-
+.location {
+    width: 25%;
+}
+#tenthuky:hover {
+    cursor: pointer;
+}
 .specialradio {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
-.w3-badge.w3-button.w3-blue {
+.fixed-button {
     position: fixed;
     bottom: 20px;
+    animation: follow-scroll 1s ease-in-out infinite alternate;
 }
+.fixed-button:hover {
+    background-color: #f707efa4 !important;
+    color: azure !important;
+}
+@keyframes follow-scroll {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(0, 5px); /* Set distance to move the element */
+    }
+  }
 
 .hiddenButton {
     display: none;
@@ -47,6 +64,9 @@ th, td {
     html, body {
       width: 260mm;
       height: auto;
+    }
+    .location {
+        width: 30%;
     }
     .w3-badge.w3-button {
         display: none;
@@ -78,7 +98,6 @@ td .auto-expand {
     resize: none;
     border: none;
     box-sizing: border-box;
-    height: auto; /* Set initial height to 1 line */
     width: 100%;
     vertical-align: middle;
     overflow: hidden; 
