@@ -23,7 +23,12 @@ th, td {
 .location {
     width: 25%;
 }
-
+#tenthuky {
+    font-weight: bold;
+}
+#tenthuky:hover {
+    cursor: pointer;
+}
 .specialradio {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -33,6 +38,10 @@ th, td {
     position: fixed;
     bottom: 20px;
     animation: follow-scroll 1s ease-in-out infinite alternate;
+}
+.fixed-button:hover {
+    background-color: #f707efa4 !important;
+    color: azure !important;
 }
 @keyframes follow-scroll {
     0% {
