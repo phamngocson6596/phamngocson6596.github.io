@@ -104,7 +104,7 @@ document.querySelector("#dongyButton").onclick = function(){
 document.querySelector("#tenthuky").onclick = function() {
     const ten = this.querySelector("b");
     const input = document.createElement("input");
-    input.placeholder = ten.textContent;
+    input.placeholder = "Nhập tên thư ký";
     input.type = "text";
 
     this.removeChild(ten);
