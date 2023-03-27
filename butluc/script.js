@@ -112,7 +112,7 @@ document.querySelector("#tenthuky").onclick = function() {
     input.focus();
     input.addEventListener("blur", ()=> {
         if (input.value!==""){ten.textContent = input.value};
-        localStorage.tenthuky = input.value;
+        localStorage.setItem("tenthuky", input.value);
         this.appendChild(ten);
         this.removeChild(input);
       });
@@ -125,5 +125,5 @@ document.querySelector("#tablecontent tr:nth-of-type(2) .miniontosum").value = 1
 document.querySelector("#tablecontent tr:nth-of-type(2) .bc input").checked = true;
 
 if (localStorage.tenthuky){
-document.querySelector("#tenthuky").querySelector("b").textContent = localStorage.tenthuky;
+    document.querySelector("#tenthuky").querySelector("b").textContent = localStorage.tenthuky;
 }
