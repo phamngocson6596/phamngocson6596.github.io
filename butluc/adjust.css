@@ -23,9 +23,6 @@ th, td {
 .location {
     width: 25%;
 }
-#tenthuky {
-    font-weight: bold;
-}
 #tenthuky:hover {
     cursor: pointer;
 }

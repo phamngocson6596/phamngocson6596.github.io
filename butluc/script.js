@@ -101,9 +101,29 @@ document.querySelector("#dongyButton").onclick = function(){
     saveDoc(); 
     document.getElementById('id01').style.display='none';
 };
+document.querySelector("#tenthuky").onclick = function() {
+    const ten = this.querySelector("b");
+    const input = document.createElement("input");
+    input.placeholder = ten.textContent;
+    input.type = "text";
+
+    this.removeChild(ten);
+    this.appendChild(input);
+    input.focus();
+    input.addEventListener("blur", ()=> {
+        if (input.value!==""){ten.textContent = input.value};
+        localStorage.tenthuky = input.value;
+        this.appendChild(ten);
+        this.removeChild(input);
+      });
+}
 
 document.querySelector("#tablecontent tr:nth-of-type(1) .bc input").checked = true;
 document.querySelector("#tablecontent tr:nth-of-type(1) textarea").value = "1-";
 document.querySelector("#tablecontent tr:nth-of-type(1) .miniontosum").value = 1;
 document.querySelector("#tablecontent tr:nth-of-type(2) .miniontosum").value = 1;
 document.querySelector("#tablecontent tr:nth-of-type(2) .bc input").checked = true;
+
+if (localStorage.tenthuky){
+document.querySelector("#tenthuky").querySelector("b").textContent = localStorage.tenthuky;
+}
