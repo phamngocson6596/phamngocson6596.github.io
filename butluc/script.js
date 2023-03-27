@@ -116,7 +116,7 @@ document.querySelector("#tenthuky").onclick = function() {
         this.appendChild(ten);
         this.removeChild(input);
       });
-}
+};
 
 document.querySelector("#tablecontent tr:nth-of-type(1) .bc input").checked = true;
 document.querySelector("#tablecontent tr:nth-of-type(1) textarea").value = "1-";
@@ -126,4 +126,4 @@ document.querySelector("#tablecontent tr:nth-of-type(2) .bc input").checked = tr
 
 if (localStorage.tenthuky){
     document.querySelector("#tenthuky").querySelector("b").textContent = localStorage.tenthuky;
-}
+};
