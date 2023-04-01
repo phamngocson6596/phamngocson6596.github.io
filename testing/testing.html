@@ -1,41 +1,104 @@
 <html>
 <head>
 <style>
-.heart {
-  position: relative;
-  width: 100px;
-  height: 90px;
+/* Style for the open button */
+#open-modal-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.heart:before,
-.heart:after {
-  position: absolute;
-  content: "";
-  left: 50px;
+/* Style for the modal container */
+#modal-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
   top: 0;
-  width: 50px;
-  height: 80px;
-  background: red;
-  border-radius: 50px 50px 0 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
 }
 
-.heart:before {
-    left: -5px; 
-    transform-origin:left center; 
-    transform: rotate(-45deg);
+/* Style for the modal box */
+#modal {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
 }
 
-.heart:after {
-    left:-45px; 
-    transform-origin:right center; 
-    transform: rotate(45deg);
+/* Style for the modal buttons */
+#modal-buttons {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Style for the OK and Cancel buttons */
+#modal-ok-btn, #modal-cancel-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#modal-cancel-btn {
+  background-color: #f44336;
 }
 </style>
 </head>
 <body>
 
-<div class="heart"></div>
-<div style="width: 50px; height: 50px; background-image: url('data:image/svg+xml;utf8,<svg viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;%23FF0000&quot;><path d=&quot;M12 21.35l-10.84-9.84c-1.64-1.49-1.64-3.92 0-5.41 1.64-1.5 4.31-1.5 5.94 0L12 6.06l5.9-5.36c1.63-1.5 4.3-1.5 5.94 0 1.63 1.49 1.63 3.92 0 5.41L12 21.35z&quot;/></svg>')"></div>
+  <button id="open-modal-btn">Open Modal</button>
+  <div id="modal-container">
+    <div id="modal">
+      <h2>Modal Title</h2>
+      <p>Enter your input here:</p>
+      <input type="text" id="modal-input">
+      <div id="modal-buttons">
+        <button id="modal-ok-btn">OK</button>
+        <button id="modal-cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    // Get the modal and button elements
+const modal = document.getElementById("modal-container");
+const openBtn = document.getElementById("open-modal-btn");
+const okBtn = document.getElementById("modal-ok-btn");
+const cancelBtn = document.getElementById("modal-cancel-btn");
+
+// Add event listener to open button
+openBtn.addEventListener("click", function() {
+  // Display the modal
+  modal.style.display = "block";
+});
+
+// Add event listener to OK button
+okBtn.addEventListener("click", function() {
+  // Get the input value and do something with it
+  const input = document.getElementById("modal-input").value;
+  console.log("Input Value: ", input);
+  // Hide the modal
+  modal.style.display = "none";
+});
+
+// Add event listener to Cancel button
+cancelBtn.addEventListener("click", function() {
+  // Hide the modal
+  modal.style.display = "none";
+});
+
+  </script>
 </body>
 </html>
