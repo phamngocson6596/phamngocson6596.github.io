@@ -52,8 +52,7 @@ textareas.forEach(textarea=>{
         timMax(textareas);
     });
 });
-const editButtons = document.querySelectorAll(".w3-button.editContent");
-editButtons.forEach(button=>{
+document.querySelectorAll(".w3-button.editContent").forEach(button=>{
     button.addEventListener("click", ()=>{
         const mother = document.querySelector(`#motherContent${button.id.substring(4)}`);
         const title = mother.querySelector(".nameofdoc");
@@ -74,8 +73,7 @@ editButtons.forEach(button=>{
     })
 });
 
-const resetMiniButtons = document.querySelectorAll(".miniReset");
-resetMiniButtons.forEach(button=>{
+document.querySelectorAll(".miniReset").forEach(button=>{
     button.addEventListener("click", ()=>{
         const parent = document.querySelector(`#grandPa${button.id.substring(5)}`);
         parent.querySelector(".bc input").checked = false;
@@ -116,9 +114,8 @@ if (localStorage.tenthuky){
     document.querySelector("#tenthuky").querySelector("b").textContent = localStorage.tenthuky;
 };
 
-const ccv=document.querySelectorAll(".ccv");
-ccv.forEach(c=>{
-    c.addEventListener("click", event=>{
+document.querySelectorAll(".ccv").forEach(ccv=>{
+    ccv.addEventListener("click", event=>{
         document.querySelector("#congchungvien").innerHTML = `<b>${event.currentTarget.textContent}</b>`
     })
 })
