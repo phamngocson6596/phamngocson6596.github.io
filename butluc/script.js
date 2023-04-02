@@ -115,3 +115,10 @@ document.querySelector("#tablecontent tr:nth-of-type(2) .bc input").checked = tr
 if (localStorage.tenthuky){
     document.querySelector("#tenthuky").querySelector("b").textContent = localStorage.tenthuky;
 };
+
+const ccv=document.querySelectorAll(".ccv");
+ccv.forEach(c=>{
+    c.addEventListener("click", event=>{
+        document.querySelector("#congchungvien").innerHTML = `<b>${event.currentTarget.textContent}</b>`
+    })
+})
