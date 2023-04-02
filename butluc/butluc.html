@@ -45,7 +45,7 @@
           <span><b>Thời hạn lưu trữ: 20 năm</b></span>
         </div>
         <div class="w3-cell" style="width:33.3%;">
-          <div class="w3-dropdown-hover" style="background-color: white; width: 100%; padding-bottom: 50px;">
+          <div class="w3-dropdown-hover" style="background-color: white; padding-bottom: 50px;">
             <p><b>Công chứng viên</b></p>
             <div class="w3-dropdown-content w3-bar-block w3-border" style="bottom: 0%;width: max-content;margin: auto;">
               <a class="w3-bar-item w3-button w3-hover-pale-blue ccv">Dương Phước Hoàng Khánh</a>
@@ -53,7 +53,7 @@
               <a class="w3-bar-item w3-button w3-hover-pale-blue ccv">Võ Thị Bạch Tuyết</a>
             </div>
           </div>
-          <span id="congchungvien"></span>
+          <span id="congchungvien" style="display: block;"></span>
         </div>
       </div>
     </div>
@@ -82,7 +82,7 @@
           <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
           <h2>Tên thư ký!</h2>
           <p>Lưu tên thư ký</p>
-          <input type="text" id="modal-input" class="w3-input w3-border" style="margin-bottom: 20px;">
+          <input type="text" id="modal-input" class="w3-input w3-border" style="margin-bottom: 20px;" placeholder="Tên thư ký. Ví dụ: Hoa Hiền Hòa; Ngọc Cáu Kỉnh ...">
           <button type="button" class="w3-button w3-blue w3-third" onclick="localStorage.setItem(`tenthuky`, document.getElementById(`modal-input`).value);document.querySelector(`#tenthuky`).querySelector(`b`).textContent = localStorage.tenthuky;document.getElementById('id02').style.display='none'">Đồng ý</button>
           <button type="button" onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-red w3-third">Hủy bỏ</button>
           <button type="button" onclick="localStorage.removeItem(`tenthuky`);document.querySelector(`#tenthuky`).querySelector(`b`).textContent = localStorage.tenthuky;document.getElementById('id02').style.display='none'" class="w3-button w3-green w3-third" title="Xóa tên thư ký">Xóa tên thư ký</button>
