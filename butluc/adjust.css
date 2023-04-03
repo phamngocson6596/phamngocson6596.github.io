@@ -7,6 +7,9 @@ th, td {
 tr:hover input, tr:hover textarea {
     background-color: #ddffff;
 }
+tr:hover input:focus, tr:hover textarea:focus {
+    background-color: white;
+}
 .nameofdoc {
     text-align: left !important;
 }
