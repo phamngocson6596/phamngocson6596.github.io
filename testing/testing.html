@@ -1,104 +1,12 @@
+<!DOCTYPE html>
 <html>
-<head>
-<style>
-/* Style for the open button */
-#open-modal-btn {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  <head>
+    <title>My Webpage</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script></head>
+  <body>
+    <h1>Interact with Word</h1>
+    <button onclick="openWord()">Open Word</button>
+    <script src="script.js"></script>
 
-/* Style for the modal container */
-#modal-container {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
-
-/* Style for the modal box */
-#modal {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 500px;
-}
-
-/* Style for the modal buttons */
-#modal-buttons {
-  margin-top: 20px;
-  text-align: right;
-}
-
-/* Style for the OK and Cancel buttons */
-#modal-ok-btn, #modal-cancel-btn {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-#modal-cancel-btn {
-  background-color: #f44336;
-}
-</style>
-</head>
-<body>
-
-  <button id="open-modal-btn">Open Modal</button>
-  <div id="modal-container">
-    <div id="modal">
-      <h2>Modal Title</h2>
-      <p>Enter your input here:</p>
-      <input type="text" id="modal-input">
-      <div id="modal-buttons">
-        <button id="modal-ok-btn">OK</button>
-        <button id="modal-cancel-btn">Cancel</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Get the modal and button elements
-const modal = document.getElementById("modal-container");
-const openBtn = document.getElementById("open-modal-btn");
-const okBtn = document.getElementById("modal-ok-btn");
-const cancelBtn = document.getElementById("modal-cancel-btn");
-
-// Add event listener to open button
-openBtn.addEventListener("click", function() {
-  // Display the modal
-  modal.style.display = "block";
-});
-
-// Add event listener to OK button
-okBtn.addEventListener("click", function() {
-  // Get the input value and do something with it
-  const input = document.getElementById("modal-input").value;
-  console.log("Input Value: ", input);
-  // Hide the modal
-  modal.style.display = "none";
-});
-
-// Add event listener to Cancel button
-cancelBtn.addEventListener("click", function() {
-  // Hide the modal
-  modal.style.display = "none";
-});
-
-  </script>
-</body>
+  </body>
 </html>
