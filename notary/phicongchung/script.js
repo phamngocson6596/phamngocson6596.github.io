@@ -30,5 +30,4 @@ function phicongchung(giamuaban) {
 const giatrihoso = document.getElementById("giatrihoso");
 giatrihoso.addEventListener("keyup", () =>{
     document.querySelector("#phicongchung").textContent = phicongchung(giatrihoso.value);
-    console.log(giatrihoso.value.toLocaleString());
 });
