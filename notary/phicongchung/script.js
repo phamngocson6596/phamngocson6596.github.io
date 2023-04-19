@@ -1,3 +1,5 @@
+import MyElement from "../element.js";
+
 function phicongchung(giamuaban) {
     const value = parseInt(giamuaban,10);
     if (value<50_000_000) {
@@ -31,3 +33,5 @@ const giatrihoso = document.getElementById("giatrihoso");
 giatrihoso.addEventListener("keyup", () =>{
     document.querySelector("#phicongchung").textContent = phicongchung(giatrihoso.value);
 });
+
+customElements.define('my-element', MyElement);
