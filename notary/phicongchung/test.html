@@ -14,17 +14,36 @@
     <div class="w3-container w3-border w3-padding-large" style="width: 50%;margin: auto; margin-top: 50px;">
         <h1>Danh mục hồ sơ</h1>
 
-        <div class="w3-card hoso">
+        <div style="padding: 15px 15px;">
+            <input type="button" class="w3-btn w3-padding w3-border" value="Thêm hồ sơ" id="oldBtn">
+        </div>
+        <div style="padding: 15px 15px;">
+            <input type="button" class="w3-btn w3-padding w3-border" value="New" id="addBtn">
+        </div>
+
+        <!-- <div class="w3-card hoso">
             <div class="w3-cell-row">
                 <div class="w3-cell"><p class="w3-padding-large">Hợp đồng mua bán</p></div>
                 <div class="w3-cell w3-button close-hoso" style="width: 10%;"><i class="fas fa-times" ></i></div>
             </div>
-        </div>
-        <div style="padding-top: 15px;">
-            <input type="button" class="w3-btn w3-padding w3-border" value="Thêm hồ sơ">
-        </div>
+        </div> -->
+        
     </div>
 
+    <div id="id02" class="w3-modal">
+        <div class="w3-modal-content w3-padding-large">
+          <div class="w3-container">
+            <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h2>Tên thư ký!</h2>
+            <p>Lưu tên thư ký</p>
+            <input type="text" id="modal-input" class="w3-input w3-border" style="margin-bottom: 20px;" placeholder="Tên thư ký. Ví dụ: Hoa Hiền Hòa; Ngọc Cáu Kỉnh ...">
+            <button type="button" class="w3-button w3-blue w3-third" onclick="localStorage.setItem(`tenthuky`, document.getElementById(`modal-input`).value);document.querySelector(`#tenthuky`).querySelector(`b`).textContent = localStorage.tenthuky;document.getElementById('id02').style.display='none'">Đồng ý</button>
+            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-red w3-third">Hủy bỏ</button>
+            <button type="button" onclick="localStorage.removeItem(`tenthuky`);document.querySelector(`#tenthuky`).querySelector(`b`).textContent = localStorage.tenthuky;document.getElementById('id02').style.display='none'" class="w3-button w3-green w3-third" title="Xóa tên thư ký">Xóa tên thư ký</button>
+          </div>
+        </div>
+      </div>
+  
     <script src="new.js"></script>
 </body>
 </html>

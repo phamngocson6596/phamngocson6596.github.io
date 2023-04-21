@@ -1,6 +1,10 @@
 // Get the "Thêm hồ sơ" button element
-const addBtn = document.querySelector('.w3-btn');
+const addBtn = document.querySelector('#oldBtn');
+const hsBtn = document.querySelector('#addBtn');
 
+hsBtn.addEventListener("click", ()=>{
+    document.getElementById("id02").style.display = "block";
+})
 // Add event listener to the button
 addBtn.addEventListener('click', () => {
   // Get the "Danh mục hồ sơ" element
@@ -9,6 +13,7 @@ addBtn.addEventListener('click', () => {
   // Create a new "hoso" element
   const hosoElement = document.createElement('div');
   hosoElement.classList.add('w3-card', 'hoso');
+  hosoElement.style.marginBottom = `15px`;
 
   const hosoRow = document.createElement('div');
   hosoRow.classList.add('w3-cell-row');
