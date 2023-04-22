@@ -12,14 +12,65 @@
 </head>
 <body>
     <div class="w3-container w3-border w3-padding-large" style="width: 50%;margin: auto; margin-top: 50px;">
-        <h1>Danh mục hồ sơ</h1>
+        <h1>Tính phí công chứng</h1>
 
-        <div style="padding: 15px 15px;">
-            <input type="button" class="w3-btn w3-padding w3-border" value="Thêm hồ sơ" id="oldBtn">
-        </div>
-        <div style="padding: 15px 15px;">
+        <div class="w3-bar w3-black">
+            <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">Hồ sơ có giá</button>
+            <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">Hồ sơ không có giá</button>
+            <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Tokyo</button>
+          </div>
+          
+          <div id="London" class="w3-container w3-border w3-padding city" style="margin-bottom: 15px;">
+            <select class="w3-select w3-border " id="loaihoso" name="option">
+                <option value="Hợp đồng mua bán" selected>Hợp đồng mua bán</option>
+                <option value="Hợp đồng thế chấp">Hợp đồng thế chấp</option>
+                <option value="3">Option 3</option>
+            </select>
+            <input type="text" class="w3-input w3-border" style="margin-top: 15px;">
+            <input type="text" id="currencyInput" placeholder="0,000,000,000">
+
+            <input type="button" class="w3-btn w3-padding w3-border" value="Thêm hồ sơ" id="oldBtn" onclick="addNewHoso(document.getElementById(`loaihoso`).value)" style="margin-top: 15px;">
+          </div>
+        
+          <div id="Paris" class="w3-container w3-border city" style="display:none;margin-bottom: 15px;">
+            <h2>Paris</h2>
+            <p>Paris is the capital of France.</p> 
+          </div>
+        
+          <div id="Tokyo" class="w3-container w3-border city" style="display:none;margin-bottom: 15px;">
+            <h2>Tokyo</h2>
+            <p>Tokyo is the capital of Japan.</p>
+          </div>
+        
+        <script>
+        function openCity(evt, cityName) {
+          var i, x, tablinks;
+          x = document.getElementsByClassName("city");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " w3-red";
+        }
+        const input = document.getElementById("currencyInput");
+
+        input.addEventListener("input", (e) => {
+        const value = e.target.value;
+        const newValue = value.replace(/\D/g, "").padStart(10, "0");
+        const formattedValue = newValue.replace(/(\d{1})(\d{3})(\d{3})(\d{3})/, "$1,$2,$3,$4");
+        input.value = formattedValue;
+        });
+
+        </script>
+
+        
+        <!-- <div style="padding: 15px 15px;">
             <input type="button" class="w3-btn w3-padding w3-border" value="New" id="addBtn">
-        </div>
+        </div> -->
 
         <!-- <div class="w3-card hoso">
             <div class="w3-cell-row">
