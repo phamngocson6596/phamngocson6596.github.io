@@ -17,17 +17,18 @@
         <div class="w3-bar w3-black">
             <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">Hồ sơ có giá</button>
             <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">Hồ sơ không có giá</button>
-            <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Tokyo</button>
+            <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Hồ sơ nhỏ</button>
           </div>
           
           <div id="London" class="w3-container w3-border w3-padding city" style="margin-bottom: 15px;">
+            <p>Loại hồ sơ:</p>
             <select class="w3-select w3-border " id="loaihoso" name="option">
                 <option value="Hợp đồng mua bán" selected>Hợp đồng mua bán</option>
                 <option value="Hợp đồng thế chấp">Hợp đồng thế chấp</option>
                 <option value="3">Option 3</option>
             </select>
+            <p>Giá trị hợp đồng:</p>
             <input type="text" class="w3-input w3-border" style="margin-top: 15px;">
-            <input type="text" id="currencyInput" placeholder="0,000,000,000">
 
             <input type="button" class="w3-btn w3-padding w3-border" value="Thêm hồ sơ" id="oldBtn" onclick="addNewHoso(document.getElementById(`loaihoso`).value)" style="margin-top: 15px;">
           </div>

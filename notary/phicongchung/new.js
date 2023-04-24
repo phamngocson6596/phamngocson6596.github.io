@@ -45,18 +45,18 @@ hsBtn.addEventListener("click", ()=>{
 // });
 
 // Get all the "close-hoso" button elements
-const closeBtns = document.querySelectorAll('.close-hoso');
+// const closeBtns = document.querySelectorAll('.close-hoso');
 
-// Add event listener to all the "close-hoso" buttons
-closeBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Get the "hoso" element
-    const hosoElement = btn.parentNode.parentNode;
+// // Add event listener to all the "close-hoso" buttons
+// closeBtns.forEach(btn => {
+//   btn.addEventListener('click', () => {
+//     // Get the "hoso" element
+//     const hosoElement = btn.parentNode.parentNode;
 
-    // Remove the "hoso" element
-    hosoElement.remove();
-  });
-});
+//     // Remove the "hoso" element
+//     hosoElement.remove();
+//   });
+// });
 
 function addNewHoso(tenhoso) {
   const danhMucHoSo = document.querySelector('.w3-container');
