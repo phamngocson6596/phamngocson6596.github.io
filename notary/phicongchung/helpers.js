@@ -1,5 +1,5 @@
-const HOSO = [
-    {name: "Hợp đồng mua bán", thulao: 300000},
-    {name: "Hợp đồng thế chấp", thulao: 300000},
+export const HOSO = [
+    {name: "Hợp đồng mua bán", thulao: 300_000},
+    {name: "Hợp đồng thế chấp", thulao: 300_000},
     
 ]
