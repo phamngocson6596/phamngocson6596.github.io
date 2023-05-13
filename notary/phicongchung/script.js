@@ -1,5 +1,3 @@
-import MyElement from "../element.js";
-
 function phicongchung(giamuaban) {
     const value = parseInt(giamuaban,10);
     if (value<50_000_000) {
