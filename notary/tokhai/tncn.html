@@ -20,7 +20,7 @@
     <title>Mẫu ĐK-09</title>
 </head>
 <body class="container">
-    <div class="d-flex justify-content-end">Mẫu số 09/ĐK</div>
+    <div class="d-flex justify-content-end fw-bold" style="font-size: 0.6rem;">Mẫu số 09/ĐK</div>
     <div class="row mb-0">
         <div class="col text-center fw-bold">
             <p class="mb-0 ">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
@@ -31,7 +31,7 @@
             <p class="mb-0 ">Kính gửi: Văn phòng đăng ký đất đai
                 Chi nhánh quận Bình Thạnh            </p>
         </div>
-        <div class="col border border-bottom-0 mb-0 text-center" style="font-size: 0.8rem;">
+        <div class="col border border-bottom-0 border-dark mb-0 text-center" style="font-size: 0.8rem;">
             <p class="mb-0 fw-bold">PHẦN GHI CỦA NGƯỜI NHẬN HỒ SƠ</p>
             <p class="mb-0 text-left">Đã kiểm tra nội dung đơn đầy đủ, rõ ràng, thống nhất <br> với giấy tờ xuất trình.</p>
             <p class="mb-0">Vào sổ tiếp nhận hồ sơ số: .....Quyển .....</p>
@@ -39,52 +39,68 @@
             <p class="mb-0 fw-bold">Người nhận hồ sơ</p>
         </div>
     </div>
-    <div class="row border border-bottom-0">
+    <div class="row border border-bottom-0 border-dark">
         <p class="mb-0 fw-bold">I. PHẦN KÊ KHAI CỦA NGƯỜI ĐĂNG KÝ</p>
         <p class="mb-0" style="font-style: italic;">(Xem kỹ hướng dẫn viết đơn trước khi kê khai; không tẩy xóa, sửa chữa trên đơn)</p>
     </div>
-    <div class="row border border-bottom-0">
+    <div class="row border border-bottom-0 border-dark">
         <p class="mb-0 fw-bold">1. Người sử dụng đất, chủ sở hữu tài sản gắn liền với đất, người quản lý đất</p>
         <p class="mb-0">1.1. Tên (viết chữ in hoa)</p>
         <p class="mb-0">1.2. Địa chỉ(1):</p>
     </div>
-    <div class="row border border-bottom-0">
+    <div class="row border border-bottom-0 border-dark">
         <p class="mb-0 fw-bold">2. Giấy chứng nhận đã cấp</p>
-        <p class="mb-0" style="font-style: italic;">2.1. Số vào sổ cấp GCN:…………........................; 2.2. Số phát hành GCN:………………………………</p>
+        <div class="row">
+        <div class="input-group col-5">
+            <span class="input-group-text p-0 border-0" style="background-color: white;">2.1. Số vào sổ cấp GCN:</span>
+            <input type="text" class="form-control border-0" placeholder="...">
+          </div>
+        </div>
+        <div class="mb-0 " style="font-style: italic;">
+            2.1. Số vào sổ cấp GCN:
+            <input type="text" class="form-control border-0 " placeholder="......................" style="display: inline;">
+            ; 2.2. Số phát hành GCN:………………………………
+        </div>
         <p class="mb-0" style="font-style: italic;">2.3. Ngày cấp GCN:………………………………</p>
 
     </div>
-    <div class="row border border-bottom-0">
+    <div class="row border border-bottom-0 border-dark">
         <p class="mb-0 fw-bold">3. Nội dung biến động về: </p>
     </div>
     <div class="row">
-        <div class="col border border-bottom-0">
+        <div class="col border border-bottom-0 border-dark">
             <p class="mb-0">3.1. Nội dung trên GCN trước khi biến động:</p>
-            <p />
+            <textarea class="form-control border-0 p-0 pt-1" rows="5"  name="text" style="resize: vertical; line-height: 1;"></textarea>
         </div>
-        <div class="col border border-bottom-0">
+        <div class="col border border-bottom-0 border-start-0 border-dark">
             <p class="mb-0">3.2. Nội dung sau khi biến động:</p>
+            <textarea class="form-control border-0 p-0 pt-1" rows="5"  name="text" style="resize: vertical; line-height: 1;"></textarea>
+
         </div>
     </div>
-    <div class="row border border-bottom-0">
+    <div class="row border border-bottom-0 border-dark">
         <p class="mb-0 fw-bold">4. Lý do biến động</p>
         <p />
     </div>
-    <div class="row border border-bottom-0">
+    <div class="row border border-bottom-0 border-dark">
         <p class="mb-0 fw-bold">5. Tình hình thực hiện nghĩa vụ tài chính về đất đai đối với thửa đất đăng ký biến động</p>
         <p />
     </div>
-    <div class="row border ">
+    <div class="row border border-dark">
         <p class="mb-0 fw-bold">6. Giấy tờ liên quan đến nội dung thay đổi nộp kèm theo đơn này gồm có:</p>
         <p>- Giấy chứng nhận đã cấp:</p>
         <p />
     </div>
     <div class="row">
-        <p class="mb-0">
-            <span>Tôi</span>
-            <span>có nhu cầu cấp GCN mới</span>
-            <span>không có nhu cầu cấp GCN mới</span>
-        </p>
+        <span class="col-2">Tôi</span>
+        <div class="form-check col-5">
+            <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" >
+            <label class="form-check-label" for="check1">có nhu cầu cấp GCN mới</label>
+        </div>
+        <div class="form-check col-5">
+            <input class="form-check-input" type="checkbox" id="check2" name="option1" value="something" >
+            <label class="form-check-label" for="check2">không có nhu cầu cấp GCN mới</label>
+        </div>
     </div>
     <div>Tôi cam đoan nội dung kê khai trên đơn là đúng sự thật, nếu sai tôi hoàn toàn chịu trách nhiệm trước pháp luật.</div>
     <div class="row ">
@@ -96,7 +112,40 @@
         </div>
     </div>
     <p class="mb-5" />
-    <hr style="width: 30%;">
-    <p >1 Sửa đổi, bổ sung Mẫu số 09/ĐK ban hành kèm theo Thông tư số 24/2014/TT-BTNMT ngày 19 tháng 5 năm 2014 của Bộ trưởng Bộ Tài nguyên và Môi trường quy định về hồ sơ địa chính.</p>
+    <hr class="mb-1" style="width: 30%;">
+    <p style="font-size: 0.8rem;">
+        <span class="align-text-bottom" style="font-size: 0.6rem;">1</span>
+        <span>Sửa đổi, bổ sung Mẫu số 09/ĐK ban hành kèm theo Thông tư số 24/2014/TT-BTNMT ngày 19 tháng 5 năm 2014 của Bộ trưởng Bộ Tài nguyên và Môi trường quy định về hồ sơ địa chính.</span> 
+    </p>
+
+    <button id="export-pdf">Export to PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script>
+        // Wait for the DOM to be ready
+        document.addEventListener("DOMContentLoaded", function () {
+          // Get the export button
+          const exportButton = document.getElementById("export-pdf");
+      
+          // Add a click event listener to the export button
+          exportButton.addEventListener("click", function () {
+            // Get the HTML element to be exported
+            const element = document.documentElement;
+      
+            // Options for the PDF generation
+            const options = {
+              margin: [10, 10, 10, 10], // Set the margin: top, left, bottom, right
+              filename: "exported_page.pdf", // Set the filename for the exported PDF
+              image: { type: "jpeg", quality: 1 }, // Set the image quality
+              html2canvas: { scale: 2 }, // Set the scale factor for high-resolution rendering
+              jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }, // Set the PDF format and orientation
+            };
+      
+            // Call the html2pdf library to generate the PDF
+            html2pdf().set(options).from(element).save();
+          });
+        });
+      </script>
+      
 </body>
 </html>
