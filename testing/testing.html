@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Webpage</title>
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script></head>
+    <title>Google Docs API Example</title>
+    <script src="https://apis.google.com/js/api.js"></script>
+  </head>
   <body>
-    <h1>Interact with Word</h1>
-    <button onclick="openWord()">Open Word</button>
-    <script src="script.js"></script>
+    <button id="authorize_button">Authorize</button>
+    <button id="create_doc_button" style="display: none">
+      Create Document
+    </button>
+    <button id="createDocument123">Create New Document</button>
 
+    <script>
+      let CLIENT_ID =
+        "614526826921-tvm7l59bovqohloo34rd0a384tljr2vt.apps.googleusercontent.com";
+      let API_KEY = "AIzaSyAQ0qV9hmI8upvl3dT15BUmZyMX59JS0OU";
+      let DISCOVERY_DOCS = [
+        "https://docs.googleapis.com/$discovery/rest?version=v1",
+      ];
+      let SCOPES = "https://www.googleapis.com/auth/documents";
+
+      function handleClientLoad() {
+        gapi.load("client:auth2", initClient);
+      }
+
+      function initClient() {
+        gapi.client
+          .init({
+            apiKey: API_KEY,
+            clientId: CLIENT_ID,
+            discoveryDocs: DISCOVERY_DOCS,
+            scope: SCOPES,
+          })
+          .then(() => {
+            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            document.getElementById("authorize_button").onclick =
+              handleAuthClick;
+            document.getElementById("create_doc_button").onclick =
+              createDocument;
+          });
+      }
+
+      function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+          document.getElementById("authorize_button").style.display = "none";
+          document.getElementById("create_doc_button").style.display = "block";
+        } else {
+          document.getElementById("authorize_button").style.display = "block";
+          document.getElementById("create_doc_button").style.display = "none";
+        }
+      }
+
+      function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+      }
+
+      function createDocument() {
+        gapi.client.docs.documents
+          .create({
+            title: "New Document",
+          })
+          .then((response) => {
+            let documentId = response.result.documentId;
+            let requests = [
+              {
+                insertText: {
+                  location: {
+                    index: 1,
+                  },
+                  text: "Hello, World!",
+                },
+              },
+            ];
+            return gapi.client.docs.documents.batchUpdate({
+              documentId: documentId,
+              requests: requests,
+            });
+          })
+          .then((response) => {
+            console.log(response);
+            alert("Document created and text added!");
+          });
+      }
+      document
+        .getElementById("createDocument123")
+        .addEventListener("click", () => {
+          let fetch_url = `https://docs.googleapis.com/v1/documents?key=${API_KEY}`;
+
+          let fetch_options = {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${CLIENT_ID}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              title: "Example of a Doc created programmatically",
+            }),
+          };
+
+          fetch(fetch_url, fetch_options)
+            .then((res) => res.json())
+            .then((res) => {
+              console.log(res);
+            });
+        });
+      document.addEventListener("DOMContentLoaded", handleClientLoad);
+    </script>
   </body>
 </html>
