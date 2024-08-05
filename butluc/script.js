@@ -1,4 +1,4 @@
-import { danhmuc, tinhtong, timMax, saveDoc } from "./helpers.js";
+import { danhmuc, tinhtong, timMax, saveDoc, ccv } from "./helpers.js";
 
 const table = document.querySelector("#tablecontent");
 
@@ -39,6 +39,16 @@ iDanhmuc.forEach((value, index) => {
         <td><input type="text" class="w3-center miniontosum"></td>
         <td class="location"><textarea class="w3-center auto-expand" rows="1"></textarea></td>
     </tr>`
+  );
+});
+
+const ccvList = document.querySelector("#danhmucCCV");
+ccv.forEach((item) => {
+  ccvList.insertAdjacentHTML(
+    "beforeend",
+    `<a class="w3-bar-item w3-button w3-hover-pale-blue ccv"
+                >${item}</a
+              >`
   );
 });
 
