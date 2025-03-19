@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>My Webpage</title>
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script></head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload Example</title>
+  </head>
   <body>
-    <h1>Interact with Word</h1>
-    <button onclick="openWord()">Open Word</button>
-    <script src="script.js"></script>
+    <h2>Upload a File</h2>
+    <form id="upload-form">
+      <input type="file" id="file-input" name="files[]" multiple />
+      <button type="submit">Upload</button>
+    </form>
+    <img
+      src="https://lh3.googleusercontent.com/d/1USYdL5a7xnVOnXTJ6m_PWucPGpcENTJ4"
+      alt="Image"
+    />
+    <div id="response"></div>
+    <button id="test">Testing</button>
 
+    <script src="upload.js"></script>
+    <script>
+      document.getElementById("test").addEventListener("click", function () {
+        const textToCopy =
+          "Name:\tJohn Doe\nAge:\t30\nSkills:\tJavaScript, VB.NET, • React";
+        navigator.clipboard
+          .writeText(textToCopy)
+          .then(function () {
+            console.log("Text copied to clipboard!");
+          })
+          .catch(function (err) {
+            console.error("Error copying to clipboard: ", err);
+          });
+      });
+    </script>
   </body>
 </html>
